@@ -581,6 +581,8 @@ router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
     layout: 'basic',
+
+    //----- Start pages//-----//
     web: {
       languages: [
         {

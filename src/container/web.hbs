@@ -1,1 +1,75 @@
-Hello World!
+<h1>WEB</h1>
+<br>
+<hr>
+
+{{!---- Start pages ---}}
+{{#with web}}
+<div>
+    {{#each languages}}
+    <main>
+        <div>
+            <ul>
+                {{!-- Секція перша --}}
+                <li>Name: {{name}}</li>
+                <li>Version: {{version}}</li>
+                <li>Description: {{description}}</li>
+                <li>Elements:
+                    {{#each elements}}
+                    <ul>
+                        <li>Name: {{name}}</li>
+                        <li>Description: {{description}}</li>
+                        <li>Attributes:
+                            {{#each attributes}}
+                            <ul>
+                                <li>{{name}}</li>
+                                <li>{{description}}</li>
+                            </ul>
+                            {{/each}}
+                        </li>
+                        <hr>
+                    </ul>
+                    {{/each}}
+                </li>
+                {{!-- Секція друга --}}
+                <li>Properties:
+                    {{#each properties}}
+                    <ul>
+                        <li>Name: {{name}}</li>
+                        <li>Description: {{description}}</li>
+                        <li>Values:
+                            {{#each values}}
+                            <ul>
+                                <li>{{value}}</li>
+                                <li>{{description}}</li>
+                            </ul>
+                            {{/each}}
+                        </li>
+                        <hr>
+                    </ul>
+                    {{/each}}
+                </li>
+                {{!-- Секція третя --}}
+                <li>Functions:
+                    {{#each functions}}
+                    <ul>
+                        <li>Name: {{name}}</li>
+                        <li>Description: {{description}}</li>
+                        <li>Parameters:
+                            {{#each parameters}}
+                            <ul>
+                                <li>{{name}}</li>
+                                <li>{{type}}</li>
+                                <li>{{description}}</li>
+                            </ul>
+                            {{/each}}
+                        </li>
+                        <hr>
+                    </ul>
+                    {{/each}}
+                </li>
+            </ul>
+        </div>
+    </main>
+    {{/each}}
+</div>
+{{/with}}
