@@ -283,7 +283,10 @@ router.get('/work', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
-    layout: 'person',
+    //--- Підключення layout---//
+    layout: 'basic',
+
+    // --- Start page--//
 
     person: {
       name: 'Emma Johnson',
@@ -388,7 +391,7 @@ router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
     // Підключення layout//
-    layout: 'bio',
+    layout: 'basic',
 
     // Start //
 
@@ -490,7 +493,7 @@ router.get('/program', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('program', {
     // Підключення layout//
-    layout: 'program',
+    layout: 'basic',
 
     // Start page //
     program: {
@@ -580,6 +583,7 @@ router.get('/program', function (req, res) {
 router.get('/web', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('web', {
+    // ---- Підключення layout----//
     layout: 'basic',
 
     //----- Start pages//-----//
