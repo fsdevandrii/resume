@@ -1,1 +1,128 @@
-Hello World
+<br>
+<div>
+    <h1>Apple MacBook Pro</h1>
+
+    <main>
+        <div>
+            <p>Name: {{name}}</p>
+            <p>Description: {{description}}</p>
+            <p>Price: {{price}}</p>
+            <p>Category: {{category}}</p>
+        </div>
+        <h3>Features:</h3>
+
+        {{#with features}}
+        <div>
+            <b>Processor:</b>
+            <hr>
+            {{#with processor}}
+            <ul>
+                <li>Brand: {{brand}}</li>
+                <li>Model: {{model}}</li>
+                <li>Speed: {{speed}}</li>
+                <li>Cores: {{cores}}</li>
+                <li>Cache: {{cache}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Memory:</b>
+            <hr>
+            {{#with memory}}
+            <ul>
+                <li>Type: {{type}}</li>
+                <li>Size: {{size}}</li>
+                <li>Speed: {{speed}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Storage:</b>
+            <hr>
+            {{#with storage}}
+            <ul>
+                <li>Type: {{type}}</li>
+                <li>Size: {{size}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Display:</b>
+            <hr>
+            {{#with display}}
+            <ul>
+                <li>Size: {{size}}</li>
+                <li>Resolution: {{resolution}}</li>
+                <li>Technology: {{technology}}</li>
+                <li>Color space: {{color_space}}</li>
+                <li>Brightness: {{brightness}}</li>
+                <li>Refresh rate: {{refresh_rate}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Graphics:</b>
+            <hr>
+            {{#with graphics}}
+            <ul>
+                <li>Brand: {{brand}}</li>
+                <li>Model: {{model}}</li>
+                <li>Memory: {{memory}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Ports:</b>
+            <hr>
+            {{#each ports}}
+            <ul>
+                <li>Type: {{type}}</li>
+                <li>Count: {{count}}</li>
+                <li>Features:</li>
+                {{#each features}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+            </ul>
+            {{/each}}
+            <br>
+            <b>Battery:</b>
+            <hr>
+            {{#with battery}}
+            <ul>
+                <li>Type: {{type}}</li>
+                <li>Capacity: {{capacity}}</li>
+                <li>Life: {{life}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Weight:</b>
+            <hr>
+            <ul>
+                <li>Weight: {{weight}}</li>
+            </ul>
+            <br>
+            <b>Dimensions:</b>
+            <hr>
+            {{#with dimensions}}
+            <ul>
+                <li>Height: {{height}}</li>
+                <li>Width: {{width}}</li>
+                <li>Depth: {{depth}}</li>
+            </ul>
+            {{/with}}
+            <br>
+            <b>Operating system:</b>
+            <hr>
+            <ul>
+                <li>Operating system: {{operating_system}}</li>
+            </ul>
+            <br>
+            <b>Accessories:</b>
+            <hr>
+            {{#each accessories}}
+            <ul>
+                <li>Name: {{name}}</li>
+                <li>Price: {{price}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        {{/with}}
+    </main>
+</div>
