@@ -1,16 +1,69 @@
+<br>
+<br>
 <div>
     <h1>Car</h1>
 
-    <div>
-        <main>
+    <main>
+        <div>
+            <div>
+                <p>Make: {{make}}</p>
+                <p>Model: {{model}}</p>
+                <p>Year: {{year}}</p>
+                <p>Color: {{color}}</p>
+            </div>
+            <br>
+            <div>
+                <div>
+                    <b>Features interior:</b>
+                    <hr>
+                    {{#with features.interior}}
+                    <ul>
+                        <li>
+                            {{seats.material}}
+                        </li>
+                        <li>
+                            {{seats.color}}
+                        </li>
+                        <li>
+                            {{seats.heated}}
+                        </li>
+                        <li>
+                            {{seats.ventilated}}
+                        </li>
+                    </ul>
+                    {{/with}}
+                </div>
+                <br>
+                <div>
+                    <b>Features exterior:</b>
+                    <hr>
+                    {{#with features.exterior}}
+                    <ul>
+                        <li>
+                            {{wheels.size}}
+                        </li>
+                        <li>
+                            {{wheels.type}}
+                        </li>
+                        <li>
+                            {{wheels.color}}
+                        </li>
+                    </ul>
+
+                    {{/with}}
+
+
+                </div>
+
+            </div>
 
 
 
 
+        </div>
 
+    </main>
 
-        </main>
-    </div>
 
 
 </div>
