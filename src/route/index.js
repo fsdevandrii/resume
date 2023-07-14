@@ -730,6 +730,16 @@ router.get('/bootstrap', function (req, res) {
 
 // ================================================================
 
+
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/task21', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task21', {
+
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -824,10 +834,69 @@ router.get('/car', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('car', {
+
     // ---- Підключення layout----//
     layout: 'basic',
 
     //----- Start pages//-----//
+
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
+      },
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
+      },
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
+
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
+        {
+          text: 'Github',
+          url: 'https://github.com/',
+        },
+        {
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
+
     make: 'Toyota',
     model: 'Camry',
     year: 2022,
@@ -1115,6 +1184,7 @@ router.get('/mac', function (req, res) {
         {
           name: 'USB-C to USB Adapter',
           price: 19.99,
+
         },
       ],
     },
@@ -1123,6 +1193,8 @@ router.get('/mac', function (req, res) {
 })
 
 // ================================================================
+
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -1287,6 +1359,7 @@ router.get('/facebook', function (req, res) {
 })
 
 // ================================================================
+
 
 // Підключаємо роутер до бек-енду
 module.exports = router
