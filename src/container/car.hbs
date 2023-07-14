@@ -5,6 +5,7 @@
 
     <main>
         <div>
+
             <div>
                 <p>Make: {{make}}</p>
                 <p>Model: {{model}}</p>
@@ -12,6 +13,7 @@
                 <p>Color: {{color}}</p>
             </div>
             <br>
+
             <div>
                 <div>
                     <b>Features interior:</b>
@@ -51,19 +53,108 @@
                     </ul>
 
                     {{/with}}
+                </div>
+                <br>
+                <div>
+                    <b>Features safety:</b>
+                    <hr>
+                    <div>
+                        <p>Airbags:</p>
+                        {{#with features.safety.airbags}}
+                        <ul>
+                            <li>Front: {{front}}</li>
+                            <li>Side: {{side}}</li>
+                            <li>Knee: {{knee}}</li>
+                            <li>Rear: {{rear}}</li>
+                        </ul>
+                        {{/with}}
+
+                    </div>
+
+                    <div>
+                        <p>Assistance:</p>
+                        {{#with features.safety.assistance}}
+                        <ul>
+                            <li>Blind spot monitoring: {{blind_spot_monitoring}}</li>
+                            <li>Rear cross traffic alert: {{rear_cross_traffic_alert}}</li>
+                            <li>Lane departure warning: {{lane_departure_warning}}</li>
+                            <li>Adaptive cruise control: {{adaptive_cruise_control}}</li>
+                            <li>Collision warning: {{collision_warning}}</li>
+                        </ul>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            {{!------ Engine ------}}
+            <div>
+                <b>Engine:</b>
+                <hr>
+                {{#with engine}}
+                <ul>
+                    <li>Type: {{type}}</li>
+                    <li>Displacement: {{displacement}}</li>
+                    <li>Horsepower: {{horsepower}}</li>
+                    <li>Torque: {{torque}}</li>
+                    <li>Transmission:</li>
+                    {{# with transmission}}
+                    <ul>
+                        <li>Type: {{type}}</li>
+                        <li>Gears: {{gears}}</li>
+
+                    </ul>
+                    {{/with}}
+                </ul>
+                {{/with}}
+            </div>
+            <br>
+            {{!------ Fuel_economy -----}}
+            <div>
+                <b>Fuel economy:</b>
+                <hr>
+                {{#with fuel_economy}}
+                <ul>
+                    <li>City: {{city}}</li>
+                    <li>Highway: {{highway}}</li>
+                    <li>Combined: {{combined}}</li>
+                </ul>
+                {{/with}}
+            </div>
+            <br>
+            {{!------ Price ------}}
+            <div>
+                <b>Price:</b>
+                <hr>
+                {{#with price}}
+                <ul>
+                    <li>Base: {{base}}</li>
+                    <li>Destination: {{destination}}</li>
+                    <li>Options:</li>
+                    {{# with options}}
+                    <ul>
+                        <li>Navigation: {{navigation}}</li>
+                        <li>Moonroof: {{moonroof}}</li>
+                        <li>Premium paint: {{premium_paint}}</li>
+                    </ul>
+                    {{/with}}
+                    <br>
+                    <li>Total: {{total}}</li>
+                </ul>
+                {{/with}}
+            </div>
+        </div>
+    </main>
+
+                    {{/with}}
 
 
                 </div>
 
             </div>
 
-
-
-
         </div>
 
     </main>
-
-
 
 </div>
