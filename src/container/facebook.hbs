@@ -1,0 +1,69 @@
+<br>
+<div>
+    <h1>Facebook</h1>
+    <main>
+        <div>
+            <p><b>Name:</b> {{name}}</p>
+        </div>
+        {{#each users}}
+        <div>
+            <div>
+                <b>User</b>
+                <hr>
+                <ul>
+                    <li>ID: {{id}}</li>
+                    <li>Name: {{name}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Age: {{age}}</li>
+                </ul>
+
+                <b>Friends:</b>
+                <hr>
+                {{#each friends}}
+                <ul>
+                    <li>ID: {{id}}</li>
+                    <li>Name: {{name}}</li>
+                    <li>Gender: {{gender}}</li>
+                    <li>Age: {{age}}</li>
+                    <br>
+
+                    <b>Mutual friends:</b>
+                    <hr>
+                    {{#each mutual_friends}}
+                    <ul>
+                        <li>M_ID: {{id}}</li>
+                        <li>M_Name: {{name}}</li>
+                        <li>M_Gender: {{gender}}</li>
+                        <li>M_Age: {{age}}</li>
+                    </ul>
+                    {{/each}}
+                    <br>
+
+                    <b>Groups:</b>
+                    <hr>
+                    {{#each groups}}
+                    <ul>
+                        <li>ID: {{id}}</li>
+                        <li>Name: {{name}}</li>
+                        <li>Description: {{description}}</li>
+                        {{#each members}}
+                        <ul>
+                            <br>
+                            <li>ID: {{id}}</li>
+                            <li>Name: {{name}}</li>
+                            <li>Gender: {{gender}}</li>
+                            <li>Age: {{age}}</li>
+                            <br>
+                        </ul>
+                        {{/each}}
+
+                    </ul>
+                    {{/each}}
+
+                </ul>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </main>
+</div>
