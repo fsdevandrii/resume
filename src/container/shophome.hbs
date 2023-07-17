@@ -51,7 +51,6 @@
     <hr class="my-5">
 
     {{!-- GoodsBlock --}}
-
     <div class="my-5">
         {{#with goodsBlock}}
         <div class="row">
@@ -140,8 +139,24 @@
         {{/with}}
     </div>
 
+    <hr class="my-5">
 
     {{!-- Footer block --}}
+    <div class="row">
+        {{#each footer}}
+        <div class="nav col-2">
+            {{#each this}}
+            <div class="nav nav-item">
+                <a href="{{link}}" class="nav-link">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+
+
+
+
 
 
 
