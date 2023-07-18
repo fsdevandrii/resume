@@ -1,4 +1,275 @@
-<main>
+<main class="m-5 p-5">
+
+    <div class="mb-4">
+        <h4>Іконки Bootstrap</h4>
+    </div>
+    <div class="my-5">
+        <div>
+            <i class="bi bi-list"></i>
+            <i class="bi bi-bookmark"></i>
+            <br>
+            <br>
+            <h4>Awesome icon</h4>
+            <img src="/svg/user.svg" alt="user icon">
+        </div>
+    </div>
+
+    <div class="my-5">
+        <h6>Іконка в кнопці</h6>
+        <button class="btn btn-primary">
+            <i class="bi bi-bookmark"></i> Open list
+        </button>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <div class="mb-4">
+        <h4>Компоненти і форми</h4>
+    </div>
+
+    <div class="my-5">
+        <div class="row g-5">
+            <div class="col-12">
+                <div>
+                    <label class="form-label" for="">
+                        e-mail address
+                    </label>
+                    <input class="form-control" type="text">
+                    <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="mb-4">
+        <h4>Компоненти і форми (декілька)</h4>
+    </div>
+
+    <div class="p-1">
+        <div class="row g-5">
+            <div class="col-12">
+                <label class="form-label" for="">
+                    e-mail address
+                </label>
+                <input class="form-control" type="text">
+                <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="">
+                    e-mail address
+                </label>
+                <input class="form-control" type="text">
+                <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="">
+                    e-mail address <b>(не активне поле вводу)</b>
+                </label>
+                <input disabled class="form-control" type="text">
+                <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="">
+                    e-mail address
+                </label>
+                <input type="color" class="form-control" type="text">
+                <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="p-5">
+    <div class="mb-4">
+        <h4>Розмір компоненту поля вводу</h4>
+    </div>
+    <div class="my-2">
+        <div class="row g-5">
+            <div class="col-3">
+                <div>
+                    <label class="form-label" for="">
+                        e-mail address
+                    </label>
+                    <input type="color" class="form-control" type="text">
+                    <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="p-5">
+
+    <div class="col-12">
+        <label class="form-label">text</label>
+        <div class="row">
+            <div class="col-2">
+                <input type="color" class="form-control" type="text">
+            </div>
+            <div class="col-2">
+                <input type="color" class="form-control" type="text">
+            </div>
+            <div class="col-2">
+                <input type="color" class="form-control" type="text">
+            </div>
+            <div class="col-2">
+                <input type="color" class="form-control" type="text">
+            </div>
+            <div class="form-text text-danger">Error. You need.</div>
+        </div>
+    </div>
+
+    <hr class="p-5">
+
+    <div class="col-12 mb-5">
+        <div class="row">
+            <div class="col-1 pt-1">
+                <label class="form-label">text</label>
+            </div>
+            <div class="col-4">
+                <input type="color" class="form-control" type="text">
+            </div>
+            <div class="col-7 ps-5">
+                <div class="form-text text-danger">Error. You need.</div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="p-5">
+
+    <h3>Розмір тексту: <code>form control lg, sm</code></h3>
+
+    <div class="col-12 mb-5">
+        <div class="row">
+
+            <div class="col-1">
+                <label class="form-label">text</label>
+            </div>
+
+            <div class="col-5">
+                <input class="form-control-lg" type="text">
+            </div>
+
+            <div class="col-6">
+                <div class="form-text text-danger">Error. You need.</div>
+            </div>
+
+        </div>
+    </div>
+
+    <hr class="p-5">
+
+    <h3 class="my-5">Розкривний список</h3>
+
+    <div class="col-12">
+        <label class="form-label">Select role</label>
+        <select class="form-select form-select-lg">
+            <option selected>Open list</option>
+            <option value="1">Admin</option>
+            <option value="2">User</option>
+        </select>
+        <div class="form-text text-danger">Error. You need to set correct e-mail.</div>
+    </div>
+
+
+
+    <hr class="p-5">
+
+    <h3 class="my-5">Чек філд. Вибір опцій</h3>
+
+    <div class="col-12">
+        <label class="form-label">Select food (label)</label>
+        <div class="form-label">Select food (div)</div>
+        <div class="form-check">
+            <label class="form-check-label">Apple</label>
+            <input name="food" type="checkbox" class="form-check-input">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">Orange</label>
+            <input name="food" type="checkbox" class="form-check-input">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">Banana</label>
+            <input name="food" type="checkbox" class="form-check-input">
+        </div>
+    </div>
+
+    <hr class="p-5">
+
+    <h3 class="my-5">Radio field. Вибір опцій (лише одну) (type="radio")</h3>
+
+
+    <div class="col-12">
+        <label class="form-label">Select food (label)</label>
+
+        <div class="form-check">
+            <label class="form-check-label">Apple</label>
+            <input name="food" type="radio" class="form-check-input">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">Orange</label>
+            <input name="food" type="radio" class="form-check-input">
+        </div>
+        <div class="form-check">
+            <label class="form-check-label">Banana</label>
+            <input name="food" type="radio" class="form-check-input">
+        </div>
+    </div>
+
+    <hr class="p-5">
+
+    <h3 class="my-5">Switch field. Поле перемикач.</h3>
+
+    <div class="col-12">
+        {{!-- <label class="form-label">Get bonus</label> --}}
+
+        <div class="form-check form-switch">
+            <label class="form-check-label">Get bonus</label>
+            <input name="food" type="checkbox" class="form-check-input">
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <br>
+    <br>
+    <hr class="p-5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <h1 class="text-center text-uppercase">Hello World</h1>
     <h2 class="text-end text-lowercase">Hello world second</h2>
     <h3 class="text-capitalize">Hello world</h3>
