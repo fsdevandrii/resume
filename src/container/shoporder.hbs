@@ -1,0 +1,180 @@
+<main>
+
+    {{!-- Меню навігація--}}
+    <div class="my-5">
+        {{#with navigation}}
+        <div>
+            <div class="card">
+                <div class="nav p-1">
+                    {{#each links}}
+                    <div class=" item">
+                        <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+
+
+    <div class="display-6">
+        {{header}}
+    </div>
+
+
+    {{#with contacts_data}}
+    <div>
+        <div>
+            <div>
+                <h4 class="mt-5">
+                    {{title}}
+                </h4>
+
+                {{!-- Дві кнопки рядом --}}
+
+                <div class="row">
+                    <div class="row col-10">
+                        {{#each buttons}}
+                        <div class="col-4">
+                            {{#if isPrimary}}
+                            <button class="btn btn-warning">{{text}}</button>
+                            {{/if}}
+                        </div>
+                        <div class="col-5">
+                            {{#if isOutline}}
+                            <button class="btn btn-outline-warning">{{text}}</button>
+                            {{/if}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{!-- Прізвище, ім'я, мобільний, пошта (форма) --}}
+
+        <div class="py-5">
+            <div class="row">
+                {{!-- Прізвище --}}
+                <div class="col-6 pb-4">
+                    <label class="form-label" for="">
+                        {{form.input.surname.label}}
+                    </label>
+                    <input class="form-control" type="text" placeholder={{form.input.surname.placeholder}}>
+                    <div class="form-text">{{form.input.surname.caption}}</div>
+                </div>
+                {{!-- Ім'я --}}
+                <div class="col-6 pb-4">
+                    <label class="form-label" for="">
+                        {{form.input.name.label}}
+                    </label>
+                    <input class="form-control" type="text" placeholder={{form.input.name.placeholder}}>
+                    <div class=" form-text">{{form.input.name.caption}}
+                    </div>
+                </div>
+                {{!-- Телефон --}}
+                <div class="col-6 pb-4">
+                    <label class="form-label" for="">
+                        {{form.input.phone.label}}
+                    </label>
+                    <input class="form-control" type="text" placeholder={{form.input.phone.placeholder}}>
+                    <div class="form-text">{{form.input.phone.caption}}</div>
+                </div>
+                {{!-- e-mail address --}}
+                <div class="col-6 pb-4">
+                    <label class="form-label" for="">
+                        {{form.input.email.label}}
+                    </label>
+                    <input class="form-control" type="text" placeholder={{form.input.email.placeholder}}>
+                    <div class="form-text">{{form.input.email.caption}}</div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div>
+            <hr class="py-3">
+        </div>
+
+        {{!-- Перемикач Switch field --}}
+
+        <div class="row">
+            <div class="col-6 pb-4">
+                {{#each form.switch}}
+                <div class="form-check form-switch">
+                    <div>
+                        <label class="form-check-label">{{text}}</label>
+                        {{#if isActive}}
+                        <input name="food" type="checkbox" checked class="form-check-input">
+                        {{/if}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+
+        <div>
+            <hr class=" py-3">
+        </div>
+
+    </div>
+    {{/with}}
+
+
+    {{#each action_block}}
+    <div class="card">
+        <button class="btn ">{{text}}</button>
+    </div>
+    {{/each}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {{!-- Footer block --}}
+    {{!-- <div class="row">
+        {{#each footer}}
+        <div class="nav col-2">
+            {{#each this}}
+            <div class="nav nav-item">
+                <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div> --}}
+
+
+
+
+
+
+
+
+</main>
