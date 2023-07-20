@@ -304,64 +304,163 @@
         </div>
 
         {{!-- Коментар --}}
-        <div class="">
-            <div class="row">
-                <div class="col-8 pb-4">
+
+        <div class="row">
+            <div class="col-8 pb-4">
+                <label class="form-label" for="">
+                    {{coment.label}}
+                </label>
+                <input class="form-control" type="text" placeholder={{coment.placeholder}}>
+            </div>
+
+        </div>
+
+
+        <div class="pt-3 pb-3">
+            <hr>
+        </div>
+        {{/with}}
+
+        {{!-- Блоек Coupon --}}
+
+        <div class="row">
+            {{#with coupon}}
+            <div>
+                <div class="display-6 pt-3 pb-3">
+                    {{title}}
+                </div>
+
+                <div class="col-8 pt-2 pb-2">
+                    <label class="form-label">{{select.availabel_coupon.label}}</label>
+                    <select class="form-select form-select-lg">
+                        <option selected>{{select.availabel_coupon.placeholder}}</option>
+                        {{#each select.availabel_coupon.options}}
+                        <option value={{value}}>{{text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+
+                <div class="row g-2">
+
+                    <div class="col-8 pt-2 pb-3">
+                        <label class="form-label">{{select.friend_coupon.label}}</label>
+                        <select class="form-select form-select-sm">
+                            <option selected>{{select.friend_coupon.placeholder}}</option>
+                            {{#each select.friend_coupon.options}}
+                            <option value={{value}}>{{text}}</option>
+                            {{/each}}
+                        </select>
+                        <div class="form-text">Caption text, description, error notification.</div>
+                    </div>
+                </div>
+
+
+
+                <div class="row g-2">
+
+                    <div class="col-8 pb-3">
+                        <label class="form-label" for="">
+                            {{add.friend.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{add.friend.placeholder}}>
+                        <div class="form-text">{{add.friend.caption}}</div>
+                    </div>
+
+
+                    <div class="col-8">
+                        <label class="form-label" for="">
+                            {{add.colleague.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{add.colleague.placeholder}}>
+                        <div class="form-text">{{add.colleague.caption}}</div>
+                    </div>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+
+
+        {{!-- Блок quiz --}}
+
+        <div class="row">
+            {{#with quiz}}
+            <div class="py-5">
+                <div class="display-6 pt-3 pb-3">
+                    {{title}}
+                </div>
+
+                <div class="col-8 pt-2 pb-2">
+                    <div>
+                        {{title}}
+                    </div>
+                    <label class="form-label">{{preference.title}}</label>
+
+                    {{#each preference.options}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{this}}</label>
+                        <input name="food" type="radio" class="form-check-input">
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="col-8 pt-3 pb-3">
                     <label class="form-label" for="">
-                        {{coment.label}}
+                        {{your_expirience.label}}
                     </label>
-                    <input class="form-control" type="text" placeholder={{coment.placeholder}}>
+                    <input class="form-control" type="text">
+                </div>
+
+                <div class="col-8 pt-3 pb-3">
+                    <label class="form-label">{{purchase_frequency.label}}</label>
+                    <select class="form-select">
+                        <option selected>{{purchase_frequency.placeholder}}</option>
+                        {{#each purchase_frequency.options}}
+                        <option value={{value}}>{{text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <div class="col-8 pt-2 pb-2">
+                    <label class="form-label">{{factors.title}}</label>
+                    {{#each factors.options}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{this}}</label>
+                        <input name="food" type="check-box" class="form-check-input">
+                    </div>
+                    {{/each}}
                 </div>
 
             </div>
+            {{/with}}
+
+
+            <div class="pt-5 pb-3">
+                <hr>
+            </div>
+
+
+
+
+            {{!-- Footer block --}}
+            <div class="row">
+                {{#each footer}}
+                <div class="nav col-2">
+                    {{#each this}}
+                    <div class="nav nav-item">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+
+            </div>
+
+
         </div>
-
-
-
-        {{/with}}
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    {{!-- Footer block --}}
-    {{!-- <div class="row">
-        {{#each footer}}
-        <div class="nav col-2">
-            {{#each this}}
-            <div class="nav nav-item">
-                <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
-            </div>
-            {{/each}}
-        </div>
-        {{/each}}
-    </div> --}}
 
 
 
