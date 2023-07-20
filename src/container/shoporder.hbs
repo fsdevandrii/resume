@@ -17,128 +17,121 @@
         {{/with}}
     </div>
 
-
-
-    <div class="display-6">
-        {{header}}
+    <div class="pt-3 pb-3">
+        <h1>
+            {{header}}
+        </h1>
     </div>
 
 
-    {{#with contacts_data}}
-    <div>
+    <div class="row">
+
+        {{#with contacts_data}}
         <div>
             <div>
-                <h4 class="mt-5">
+                <div class="display-6 pt-3 pb-3">
                     {{title}}
-                </h4>
+                </div>
 
                 {{!-- Дві кнопки рядом --}}
 
                 <div class="row">
-                    <div class="row col-10">
-                        {{#each buttons}}
-                        <div class="col-4">
-                            {{#if isPrimary}}
-                            <button class="btn btn-warning">{{text}}</button>
-                            {{/if}}
-                        </div>
-                        <div class="col-5">
-                            {{#if isOutline}}
-                            <button class="btn btn-outline-warning">{{text}}</button>
-                            {{/if}}
-                        </div>
-                        {{/each}}
+                    {{#each buttons}}
+                    <div class="col-3">
+                        {{#if isPrimary}}
+                        <button class="btn btn-warning">{{text}}</button>
+                        {{/if}}
+
+                        {{#if isOutline}}
+                        <button class="btn btn-outline-warning">{{text}}</button>
+                        {{/if}}
                     </div>
+                    {{/each}}
                 </div>
             </div>
-        </div>
 
-        {{!-- Прізвище, ім'я, мобільний, пошта (форма) --}}
 
-        <div class="py-5">
+            {{!-- Прізвище, ім'я, мобільний, пошта (форма) --}}
+
+            <div class="py-5">
+                <div class="row">
+                    {{!-- Прізвище --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{form.input.surname.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{form.input.surname.placeholder}}>
+                        <div class="form-text">{{form.input.surname.caption}}</div>
+                    </div>
+                    {{!-- Ім'я --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{form.input.name.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{form.input.name.placeholder}}>
+                        <div class=" form-text">{{form.input.name.caption}}
+                        </div>
+                    </div>
+                    {{!-- Телефон --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{form.input.phone.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{form.input.phone.placeholder}}>
+                        <div class="form-text">{{form.input.phone.caption}}</div>
+                    </div>
+                    {{!-- e-mail address --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{form.input.email.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{form.input.email.placeholder}}>
+                        <div class="form-text">{{form.input.email.caption}}</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div>
+                <hr class="py-3">
+            </div>
+
+            {{!-- Перемикач Switch field --}}
+
             <div class="row">
-                {{!-- Прізвище --}}
                 <div class="col-6 pb-4">
-                    <label class="form-label" for="">
-                        {{form.input.surname.label}}
-                    </label>
-                    <input class="form-control" type="text" placeholder={{form.input.surname.placeholder}}>
-                    <div class="form-text">{{form.input.surname.caption}}</div>
-                </div>
-                {{!-- Ім'я --}}
-                <div class="col-6 pb-4">
-                    <label class="form-label" for="">
-                        {{form.input.name.label}}
-                    </label>
-                    <input class="form-control" type="text" placeholder={{form.input.name.placeholder}}>
-                    <div class=" form-text">{{form.input.name.caption}}
+                    {{#each form.switch}}
+                    <div class="form-check form-switch">
+                        <div>
+                            <label class="form-check-label">{{text}}</label>
+                            <input name="food" type="checkbox" {{#if isActive}}checked{{/if}} class="form-check-input">
+                        </div>
                     </div>
-                </div>
-                {{!-- Телефон --}}
-                <div class="col-6 pb-4">
-                    <label class="form-label" for="">
-                        {{form.input.phone.label}}
-                    </label>
-                    <input class="form-control" type="text" placeholder={{form.input.phone.placeholder}}>
-                    <div class="form-text">{{form.input.phone.caption}}</div>
-                </div>
-                {{!-- e-mail address --}}
-                <div class="col-6 pb-4">
-                    <label class="form-label" for="">
-                        {{form.input.email.label}}
-                    </label>
-                    <input class="form-control" type="text" placeholder={{form.input.email.placeholder}}>
-                    <div class="form-text">{{form.input.email.caption}}</div>
+                    {{/each}}
                 </div>
 
             </div>
 
-        </div>
-
-        <div>
-            <hr class="py-3">
-        </div>
-
-        {{!-- Перемикач Switch field --}}
-
-        <div class="row">
-            <div class="col-6 pb-4">
-                {{#each form.switch}}
-                <div class="form-check form-switch">
-                    <div>
-                        <label class="form-check-label">{{text}}</label>
-                        <input name="food" type="checkbox" {{#if isActive}}checked{{/if}} class="form-check-input">
-                    </div>
-                </div>
-                {{/each}}
+            <div>
+                <hr class=" py-3">
             </div>
 
         </div>
-
-        <div>
-            <hr class=" py-3">
-        </div>
+        {{/with}}
 
     </div>
-    {{/with}}
 
     {{!-- Блок з кнопками --}}
 
-    <div class="row">
-        <div class="card col-4">
-            {{#each action_block}}
-            <div class="card-body">
-                <button class={{#if isSuccess}}"btn btn-primary py-1"{{/if}}{{#if isDanger}}"btn btn-danger
-                    py-1"{{/if}}{{#if isInfo}}"btn btn-warning py-1"{{/if}}>{{text}}</button>
-            </div>
-            {{/each}}
+    <div class="card col-4 py-0 mb-5">
+        {{#each action_block}}
+        <div class="card-body pt-2 pb-2">
+            <button class={{#if isSuccess}}"btn btn-primary"{{/if}}{{#if isDanger}}"btn btn-danger"{{/if}}{{#if
+                isInfo}}"btn btn-warning"{{/if}}>{{text}}</button>
         </div>
-
+        {{/each}}
     </div>
-
-    <br>
-    <br>
-    <br>
 
     {{!--Блок "ВСЬОГО:" --}}
     <div class="row">
@@ -459,13 +452,6 @@
 
         </div>
     </div>
-
-
-
-
-
-
-
 
 
 
