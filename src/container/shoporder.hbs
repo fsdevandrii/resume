@@ -107,9 +107,7 @@
                 <div class="form-check form-switch">
                     <div>
                         <label class="form-check-label">{{text}}</label>
-                        {{#if isActive}}
-                        <input name="food" type="checkbox" checked class="form-check-input">
-                        {{/if}}
+                        <input name="food" type="checkbox" {{#if isActive}}checked{{/if}} class="form-check-input">
                     </div>
                 </div>
                 {{/each}}
@@ -124,12 +122,123 @@
     </div>
     {{/with}}
 
+    {{!-- Блок з кнопками --}}
 
-    {{#each action_block}}
-    <div class="card">
-        <button class="btn ">{{text}}</button>
+    <div class="row">
+        <div class="card col-4">
+            {{#each action_block}}
+            <div class="card-body">
+                <button class={{#if isSuccess}}"btn btn-primary py-1"{{/if}}{{#if isDanger}}"btn btn-danger
+                    py-1"{{/if}}{{#if isInfo}}"btn btn-warning py-1"{{/if}}>{{text}}</button>
+            </div>
+            {{/each}}
+        </div>
+
     </div>
-    {{/each}}
+
+    <br>
+    <br>
+    <br>
+
+    {{!--Блок "ВСЬОГО:" --}}
+    <div class="row">
+        <div class="col-4">
+            {{#with total}}
+            <div>
+                <h4>
+                    {{title}}
+                </h4>
+                {{#each item_list}}
+                <div>
+                    <div>
+                        {{name}}: {{price}}
+                    </div>
+                </div>
+                {{/each}}
+                <hr>
+                {{#each additional_info}}
+                <div>
+                    <div>
+                        {{text}}: {{value}}
+                    </div>
+                </div>
+                {{/each}}
+                <hr>
+                <div>
+                    {{total_price.text}}: {{total_price.value}}
+                </div>
+            </div>
+
+            <hr>
+
+            {{!-- Дві кнопки "Всього" --}}
+            <div class="row">
+                <div class="col-12">
+                    {{#each button}}
+                    <button class={{#if isPrimary}}"btn btn-primary my-3"{{/if}} {{#if isOutline}}"btn
+                        btn-outline-primary"{{/if}}>{{text}}</button>
+                    {{/each}}
+                </div>
+            </div>
+
+
+            {{/with}}
+
+
+        </div>
+    </div>
+
+    {{!-- Блок Delivery--}}
+    <div class="my-5">
+        {{#with delivery}}
+        <div class="display-6 pt-3 pb-3">
+            {{title}}
+        </div>
+
+
+
+
+        <div class="card col-8">
+            <div class="body-card">
+                <div class="row">
+                    {{#each select}}
+                    <div class="col-4">
+                        <label class="form-label">{{label}}</label>
+                        <select class="form-select">
+                            <option selected>{{placeholder}}</option>
+                            {{#each options}}
+                            <option value={{value}}>{{text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row my-4">
+            {{#each delivery_type}}
+            <div class="col-8">
+                <div class="form-check">
+                    <label class="form-check-label">{{type}}</label>
+                    <input name="food" type="radio" class="form-check-input">
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+
+
+        {{/with}}
+    </div>
+
+
+
 
 
 
