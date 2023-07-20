@@ -195,14 +195,11 @@
             {{title}}
         </div>
 
-
-
-
         <div class="card col-8">
-            <div class="body-card">
+            <div class="body-card p-3">
                 <div class="row">
                     {{#each select}}
-                    <div class="col-4">
+                    <div class="col-6">
                         <label class="form-label">{{label}}</label>
                         <select class="form-select">
                             <option selected>{{placeholder}}</option>
@@ -216,11 +213,6 @@
             </div>
         </div>
 
-
-
-
-
-
         <div class="row my-4">
             {{#each delivery_type}}
             <div class="col-8">
@@ -230,6 +222,98 @@
                 </div>
             </div>
             {{/each}}
+
+        </div>
+
+        <div class="pt-3 pb-3">
+            <hr>
+        </div>
+        {{!-- Оплата --}}
+        <div>
+            <div class="display-6 pt-3 pb-3">
+                {{payment.title}}
+            </div>
+            {{#each payment.list}}
+
+            <div class="col-8">
+                <div class="form-check">
+                    <label class="form-check-label">{{type}}</label>
+                    <input name="payment" type="radio" class="form-check-input">
+                    <div class="form-text">{{description}}</div>
+                </div>
+            </div>
+
+            {{/each}}
+
+        </div>
+
+        <div class="pt-3 pb-3">
+            <hr>
+        </div>
+
+        {{!-- Контактні дані --}}
+        <div>
+            <div class="display-6 pt-3 pb-3">
+                {{contact.title}}
+            </div>
+
+            <div class="py-3">
+                <div class="row">
+                    {{!-- Прізвище --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{contact.surname.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{contact.surname.placeholder}}>
+                        <div class="form-text">{{contact.surname.caption}}</div>
+                    </div>
+                    {{!-- Ім'я --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{contact.name.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{contact.name.placeholder}}>
+                        <div class=" form-text">{{contact.name.caption}}
+                        </div>
+                    </div>
+                    {{!-- Телефон --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{contact.phone.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{contact.phone.placeholder}}>
+                        <div class="form-text">{{contact.phone.caption}}</div>
+                    </div>
+                    {{!-- e-mail address --}}
+                    <div class="col-6 pb-4">
+                        <label class="form-label" for="">
+                            {{contact.email.label}}
+                        </label>
+                        <input class="form-control" type="text" placeholder={{contact.email.placeholder}}>
+                        <div class="form-text">{{contact.email.caption}}</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="pt-3 pb-3">
+            <hr>
+        </div>
+
+        {{!-- Коментар --}}
+        <div class="">
+            <div class="row">
+                <div class="col-8 pb-4">
+                    <label class="form-label" for="">
+                        {{coment.label}}
+                    </label>
+                    <input class="form-control" type="text" placeholder={{coment.placeholder}}>
+                </div>
+
+            </div>
         </div>
 
 
