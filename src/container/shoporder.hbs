@@ -1,6 +1,7 @@
 <main>
 
-    {{!-- Меню навігація--}}
+    {{!----------- Меню навігація-----------}}
+
     <div class="my-5">
         {{#with navigation}}
         <div>
@@ -17,167 +18,187 @@
         {{/with}}
     </div>
 
-    <div class="pt-3 pb-3">
-        <h1>
-            {{header}}
-        </h1>
-    </div>
 
-
+    {{!------------ Лівий блок -------------}}
     <div class="row">
-
-        {{#with contacts_data}}
-        <div>
-            <div>
-                <div class="display-6 pt-3 pb-3">
-                    {{title}}
-                </div>
-
-                {{!-- Дві кнопки рядом --}}
-
-                <div class="row">
-                    {{#each buttons}}
-                    <div class="col-3">
-                        {{#if isPrimary}}
-                        <button class="btn btn-warning">{{text}}</button>
-                        {{/if}}
-
-                        {{#if isOutline}}
-                        <button class="btn btn-outline-warning">{{text}}</button>
-                        {{/if}}
-                    </div>
-                    {{/each}}
-                </div>
+        <div class="col-8">
+            <div class="pt-3 pb-3">
+                <h1>
+                    {{header}}
+                </h1>
             </div>
-
-
-            {{!-- Прізвище, ім'я, мобільний, пошта (форма) --}}
-
-            <div class="py-5">
-                <div class="row">
-                    {{!-- Прізвище --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{form.input.surname.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{form.input.surname.placeholder}}>
-                        <div class="form-text">{{form.input.surname.caption}}</div>
-                    </div>
-                    {{!-- Ім'я --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{form.input.name.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{form.input.name.placeholder}}>
-                        <div class=" form-text">{{form.input.name.caption}}
-                        </div>
-                    </div>
-                    {{!-- Телефон --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{form.input.phone.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{form.input.phone.placeholder}}>
-                        <div class="form-text">{{form.input.phone.caption}}</div>
-                    </div>
-                    {{!-- e-mail address --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{form.input.email.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{form.input.email.placeholder}}>
-                        <div class="form-text">{{form.input.email.caption}}</div>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div>
-                <hr class="py-3">
-            </div>
-
-            {{!-- Перемикач Switch field --}}
-
             <div class="row">
-                <div class="col-6 pb-4">
-                    {{#each form.switch}}
-                    <div class="form-check form-switch">
-                        <div>
-                            <label class="form-check-label">{{text}}</label>
-                            <input name="food" type="checkbox" {{#if isActive}}checked{{/if}} class="form-check-input">
+
+                {{#with contacts_data}}
+                <div>
+                    <div>
+                        <div class="display-6 pt-3 pb-3">
+                            {{title}}
+                        </div>
+
+                        {{!-- Дві кнопки рядом --}}
+
+                        <div class="row">
+                            {{#each buttons}}
+                            <div class="col-5">
+                                {{#if isPrimary}}
+                                <button class="btn btn-warning">{{text}}</button>
+                                {{/if}}
+
+                                {{#if isOutline}}
+                                <button class="btn btn-outline-warning">{{text}}</button>
+                                {{/if}}
+                            </div>
+                            {{/each}}
                         </div>
                     </div>
-                    {{/each}}
+
+
+                    {{!-- Прізвище, ім'я, мобільний, пошта (форма) --}}
+
+                    <div class="py-5">
+                        <div class="row">
+                            {{!-- Прізвище --}}
+                            <div class="col-6 pb-4">
+                                <label class="form-label" for="">
+                                    {{form.input.surname.label}}
+                                </label>
+                                <input class="form-control" type="text" placeholder={{form.input.surname.placeholder}}>
+                                <div class="form-text">{{form.input.surname.caption}}</div>
+                            </div>
+                            {{!-- Ім'я --}}
+                            <div class="col-6 pb-4">
+                                <label class="form-label" for="">
+                                    {{form.input.name.label}}
+                                </label>
+                                <input class="form-control" type="text" placeholder={{form.input.name.placeholder}}>
+                                <div class=" form-text">{{form.input.name.caption}}
+                                </div>
+                            </div>
+                            {{!-- Телефон --}}
+                            <div class="col-6 pb-4">
+                                <label class="form-label" for="">
+                                    {{form.input.phone.label}}
+                                </label>
+                                <input class="form-control" type="text" placeholder={{form.input.phone.placeholder}}>
+                                <div class="form-text">{{form.input.phone.caption}}</div>
+                            </div>
+                            {{!-- e-mail address --}}
+                            <div class="col-6 pb-4">
+                                <label class="form-label" for="">
+                                    {{form.input.email.label}}
+                                </label>
+                                <input class="form-control" type="text" placeholder={{form.input.email.placeholder}}>
+                                <div class="form-text">{{form.input.email.caption}}</div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <hr class="py-3">
+                    </div>
+
+                    {{!-- Перемикач Switch field --}}
+
+                    <div class="row">
+                        <div class="col-6 pb-4">
+                            {{#each form.switch}}
+                            <div class="form-check form-switch">
+                                <div>
+                                    <label class="form-check-label">{{text}}</label>
+                                    <input name="food" type="checkbox" {{#if isActive}}checked{{/if}}
+                                        class="form-check-input">
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+
+                    </div>
+
+                    <div>
+                        <hr class=" py-3">
+                    </div>
+
                 </div>
+                {{/with}}
 
             </div>
-
-            <div>
-                <hr class=" py-3">
-            </div>
-
         </div>
-        {{/with}}
 
     </div>
 
-    {{!-- Блок з кнопками --}}
 
-    <div class="card col-4 py-0 mb-5">
-        {{#each action_block}}
-        <div class="card-body pt-2 pb-2">
-            <button class={{#if isSuccess}}"btn btn-primary"{{/if}}{{#if isDanger}}"btn btn-danger"{{/if}}{{#if
-                isInfo}}"btn btn-warning"{{/if}}>{{text}}</button>
-        </div>
-        {{/each}}
-    </div>
 
-    {{!--Блок "ВСЬОГО:" --}}
+    {{!---------------- Правий блок -------------------}}
     <div class="row">
+
         <div class="col-4">
-            {{#with total}}
-            <div>
-                <h4>
-                    {{title}}
-                </h4>
-                {{#each item_list}}
-                <div>
-                    <div>
-                        {{name}}: {{price}}
-                    </div>
+
+        </div>
+        {{!-- Блок з кнопками --}}
+
+        <div class="card col-4">
+            <div class="card-body">
+                {{#each action_block}}
+                <div class="pt-1 pb-1">
+                    <button class={{#if isSuccess}}"btn btn-primary"{{/if}}{{#if isDanger}}"btn btn-danger"{{/if}}{{#if
+                        isInfo}}"btn btn-warning"{{/if}}>{{text}}</button>
                 </div>
                 {{/each}}
-                <hr>
-                {{#each additional_info}}
-                <div>
+            </div>
+        </div>
+
+        {{!--Блок "ВСЬОГО:" --}}
+        <div class="row">
+            <div class="card col-4">
+                <div class="card-body">
+                    {{#with total}}
                     <div>
-                        {{text}}: {{value}}
+                        <h4>
+                            {{title}}
+                        </h4>
+                        {{#each item_list}}
+                        <div>
+                            <div>
+                                {{name}}: {{price}}
+                            </div>
+                        </div>
+                        {{/each}}
+                        <hr>
+                        {{#each additional_info}}
+                        <div>
+                            <div>
+                                {{text}}: {{value}}
+                            </div>
+                        </div>
+                        {{/each}}
+                        <hr>
+                        <div>
+                            {{total_price.text}}: {{total_price.value}}
+                        </div>
                     </div>
+
+                    <hr>
+
+                    {{!-- Дві кнопки "Всього" --}}
+                    <div class="row">
+                        <div class="col-12">
+                            {{#each button}}
+                            <button class={{#if isPrimary}}"btn btn-primary my-3"{{/if}} {{#if isOutline}}"btn
+                                btn-outline-primary"{{/if}}>{{text}}</button>
+                            {{/each}}
+                        </div>
+                    </div>
+
+
+                    {{/with}}
+
+
                 </div>
-                {{/each}}
-                <hr>
-                <div>
-                    {{total_price.text}}: {{total_price.value}}
-                </div>
+
             </div>
-
-            <hr>
-
-            {{!-- Дві кнопки "Всього" --}}
-            <div class="row">
-                <div class="col-12">
-                    {{#each button}}
-                    <button class={{#if isPrimary}}"btn btn-primary my-3"{{/if}} {{#if isOutline}}"btn
-                        btn-outline-primary"{{/if}}>{{text}}</button>
-                    {{/each}}
-                </div>
-            </div>
-
-
-            {{/with}}
-
-
         </div>
     </div>
 
@@ -245,51 +266,52 @@
         </div>
 
         {{!-- Контактні дані --}}
-        <div>
-            <div class="display-6 pt-3 pb-3">
-                {{contact.title}}
-            </div>
+        <div class="row">
+            <div class="col-8">
+                <div class="display-6 pt-3 pb-3">
+                    {{contact.title}}
+                </div>
 
-            <div class="py-3">
-                <div class="row">
-                    {{!-- Прізвище --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{contact.surname.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{contact.surname.placeholder}}>
-                        <div class="form-text">{{contact.surname.caption}}</div>
-                    </div>
-                    {{!-- Ім'я --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{contact.name.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{contact.name.placeholder}}>
-                        <div class=" form-text">{{contact.name.caption}}
+                <div class="py-3">
+                    <div class="row">
+                        {{!-- Прізвище --}}
+                        <div class="col-6 pb-4">
+                            <label class="form-label" for="">
+                                {{contact.surname.label}}
+                            </label>
+                            <input class="form-control" type="text" placeholder={{contact.surname.placeholder}}>
+                            <div class="form-text">{{contact.surname.caption}}</div>
                         </div>
-                    </div>
-                    {{!-- Телефон --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{contact.phone.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{contact.phone.placeholder}}>
-                        <div class="form-text">{{contact.phone.caption}}</div>
-                    </div>
-                    {{!-- e-mail address --}}
-                    <div class="col-6 pb-4">
-                        <label class="form-label" for="">
-                            {{contact.email.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{contact.email.placeholder}}>
-                        <div class="form-text">{{contact.email.caption}}</div>
+                        {{!-- Ім'я --}}
+                        <div class="col-6 pb-4">
+                            <label class="form-label" for="">
+                                {{contact.name.label}}
+                            </label>
+                            <input class="form-control" type="text" placeholder={{contact.name.placeholder}}>
+                            <div class=" form-text">{{contact.name.caption}}
+                            </div>
+                        </div>
+                        {{!-- Телефон --}}
+                        <div class="col-6 pb-4">
+                            <label class="form-label" for="">
+                                {{contact.phone.label}}
+                            </label>
+                            <input class="form-control" type="text" placeholder={{contact.phone.placeholder}}>
+                            <div class="form-text">{{contact.phone.caption}}</div>
+                        </div>
+                        {{!-- e-mail address --}}
+                        <div class="col-6 pb-4">
+                            <label class="form-label" for="">
+                                {{contact.email.label}}
+                            </label>
+                            <input class="form-control" type="text" placeholder={{contact.email.placeholder}}>
+                            <div class="form-text">{{contact.email.caption}}</div>
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
-
         </div>
 
         <div class="pt-3 pb-3">
@@ -308,22 +330,22 @@
 
         </div>
 
+        {{/with}}
 
         <div class="pt-3 pb-3">
             <hr>
         </div>
-        {{/with}}
 
-        {{!-- Блоек Coupon --}}
+        {{!-- Блок Coupon --}}
 
         <div class="row">
             {{#with coupon}}
-            <div>
+            <div class="col-8">
                 <div class="display-6 pt-3 pb-3">
                     {{title}}
                 </div>
 
-                <div class="col-8 pt-2 pb-2">
+                <div class="pt-2 pb-2">
                     <label class="form-label">{{select.availabel_coupon.label}}</label>
                     <select class="form-select form-select-lg">
                         <option selected>{{select.availabel_coupon.placeholder}}</option>
@@ -336,7 +358,7 @@
 
                 <div class="row g-2">
 
-                    <div class="col-8 pt-2 pb-3">
+                    <div class="pt-2 pb-3">
                         <label class="form-label">{{select.friend_coupon.label}}</label>
                         <select class="form-select form-select-sm">
                             <option selected>{{select.friend_coupon.placeholder}}</option>
@@ -351,22 +373,23 @@
 
 
                 <div class="row g-2">
+                    <div>
+                        <div class="pb-3">
+                            <label class="form-label" for="">
+                                {{add.friend.label}}
+                            </label>
+                            <input class="form-control" type="text" placeholder={{add.friend.placeholder}}>
+                            <div class="form-text">{{add.friend.caption}}</div>
+                        </div>
 
-                    <div class="col-8 pb-3">
-                        <label class="form-label" for="">
-                            {{add.friend.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{add.friend.placeholder}}>
-                        <div class="form-text">{{add.friend.caption}}</div>
-                    </div>
+                        <div>
+                            <label class="form-label" for="">
+                                {{add.colleague.label}}
+                            </label>
+                            <input class="form-control" type="text" placeholder={{add.colleague.placeholder}}>
+                            <div class="form-text">{{add.colleague.caption}}</div>
+                        </div>
 
-
-                    <div class="col-8">
-                        <label class="form-label" for="">
-                            {{add.colleague.label}}
-                        </label>
-                        <input class="form-control" type="text" placeholder={{add.colleague.placeholder}}>
-                        <div class="form-text">{{add.colleague.caption}}</div>
                     </div>
                 </div>
             </div>
@@ -377,55 +400,61 @@
         {{!-- Блок quiz --}}
 
         <div class="row">
-            {{#with quiz}}
-            <div class="py-5">
-                <div class="display-6 pt-3 pb-3">
-                    {{title}}
-                </div>
 
-                <div class="col-8 pt-2 pb-2">
-                    <div>
+            <div class="col-8">
+
+                {{#with quiz}}
+                <div class="py-5">
+                    <div class="display-6 pt-3 pb-3">
                         {{title}}
                     </div>
-                    <label class="form-label">{{preference.title}}</label>
 
-                    {{#each preference.options}}
-                    <div class="form-check">
-                        <label class="form-check-label">{{this}}</label>
-                        <input name="food" type="radio" class="form-check-input">
-                    </div>
-                    {{/each}}
-                </div>
+                    <div class="pt-2 pb-2">
+                        <div>
+                            {{title}}
+                        </div>
+                        <label class="form-label">{{preference.title}}</label>
 
-                <div class="col-8 pt-3 pb-3">
-                    <label class="form-label" for="">
-                        {{your_expirience.label}}
-                    </label>
-                    <input class="form-control" type="text">
-                </div>
-
-                <div class="col-8 pt-3 pb-3">
-                    <label class="form-label">{{purchase_frequency.label}}</label>
-                    <select class="form-select">
-                        <option selected>{{purchase_frequency.placeholder}}</option>
-                        {{#each purchase_frequency.options}}
-                        <option value={{value}}>{{text}}</option>
+                        {{#each preference.options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{this}}</label>
+                            <input name="food" type="radio" class="form-check-input">
+                        </div>
                         {{/each}}
-                    </select>
-                </div>
-
-                <div class="col-8 pt-2 pb-2">
-                    <label class="form-label">{{factors.title}}</label>
-                    {{#each factors.options}}
-                    <div class="form-check">
-                        <label class="form-check-label">{{this}}</label>
-                        <input name="food" type="check-box" class="form-check-input">
                     </div>
-                    {{/each}}
+
+                    <div class="pt-3 pb-3">
+                        <label class="form-label" for="">
+                            {{your_expirience.label}}
+                        </label>
+                        <input class="form-control" type="text">
+                    </div>
+
+                    <div class="pt-3 pb-3">
+                        <label class="form-label">{{purchase_frequency.label}}</label>
+                        <select class="form-select">
+                            <option selected>{{purchase_frequency.placeholder}}</option>
+                            {{#each purchase_frequency.options}}
+                            <option value={{value}}>{{text}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <div class="pt-2 pb-2">
+                        <label class="form-label">{{factors.title}}</label>
+                        {{#each factors.options}}
+                        <div class="form-check">
+                            <label class="form-check-label">{{this}}</label>
+                            <input name="food" type="check-box" class="form-check-input">
+                        </div>
+                        {{/each}}
+                    </div>
+
                 </div>
+                {{/with}}
 
             </div>
-            {{/with}}
+
 
 
             <div class="pt-5 pb-3">
