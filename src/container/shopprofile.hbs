@@ -1,0 +1,255 @@
+<main>
+
+    {{!----------- Меню навігація-----------}}
+    <div class="my-5">
+        {{#with navigation}}
+        <div>
+            <div class="card">
+                <div class="nav p-1">
+                    {{#each links}}
+                    <div class=" item">
+                        <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+    {{!-- Header H1 --}}
+    <div>
+        <h1>
+            {{header}}
+        </h1>
+    </div>
+
+    {{!-- Purchase Block --}}
+    <div>
+        {{#with purchase}}
+        <div>
+
+            {{!-- Tab Block --}}
+            <div class="row">
+                <div class="col-6">
+                    <div class="nav nav-tabs">
+                        {{#each tabs}}
+                        <div class="item">
+                            <a href="#" class={{#if @first}}"nav-link active nav-link"{{/if}} "nav-link">{{this}}</a>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+
+            {{!-- Action Block --}}
+            <div class="py-3">
+                <div class="row">
+
+                    <div class="col-4">
+                        <div>
+                            <input class="form-control" type="text" placeholder={{actionBlock.input.placeholder}}>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="px-1">
+                            {{#each actionBlock.buttons}}
+                            <a href={{link}} class={{#if isSuccess}}"btn btn-success"{{/if}}{{#if isOutline}}"btn
+                                btn-outline-success"{{/if}}{{#if isDanger}}"btn btn-outline-danger"{{/if}}>{{text}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div>
+                <b>
+                    <hr class=" my-5">
+                </b>
+            </div>
+
+            {{!-- ItemList Block--}}
+            <div>
+                {{#each itemList}}
+                <div class="row py-3">
+
+                    <div class="col-4">
+
+                        <div>{{number}}</div>
+                        <div class="pt-2"><b>{{status}}</b></div>
+                    </div>
+
+                    <div class="col-2">
+                        <div>
+                            <div>{{amount.title}}</div>
+                            <div class="pt-2"><b>{{amount.value}}</b></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-4">
+                        {{#each images}}
+                        <img class="card-img-top" src={{this}} alt="picture">
+                        {{/each}}
+                    </div>
+
+
+                    <div class="col-2">
+                        <a class="btn btn-primary" href="{{button.link}}">{{button.text}}</a>
+                    </div>
+
+
+                </div>
+                <hr>
+                {{/each}}
+            </div>
+        </div>
+        {{/with}}
+    </div>
+
+    {{!--UserInfo Block --}}
+    <div>
+        {{#with userInfo}}
+        <div class="mt-5 mb-4">
+            <h2>
+                {{title}}
+            </h2>
+        </div>
+
+        <div class="card p-3">
+            <div>
+                <h4 class="py-2">{{profileData.title}}</h4>
+
+                {{!-- Плашка 1 --}}
+                <div class="card p-2 my-3">
+                    <div class="body">
+                        <div class="row">
+                            <div class="col-4">
+                                <div>
+                                    {{profileData.fullName.surname.title}}
+                                </div>
+                                <div>
+                                    <b>{{profileData.fullName.surname.value}}</b>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div>
+                                    {{profileData.fullName.name.title}}
+                                </div>
+                                <div>
+                                    <b>{{profileData.fullName.name.value}}</b>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div>
+                                    {{profileData.fullName.middleName.title}}
+                                </div>
+                                <div>
+                                    <b>{{profileData.fullName.middleName.value}}</b>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Плашка 2 --}}
+                <div class="card p-2 my-4">
+                    <div class="body">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <div>
+                                    {{profileData.otherInfo.birthday.title}}
+                                </div>
+                                <div>
+                                    <b>{{profileData.otherInfo.birthday.value}}</b>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div>
+                                    {{profileData.otherInfo.sex.title}}
+                                </div>
+                                <div>
+                                    <b>{{profileData.otherInfo.sex.value}}</b>
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <div>
+                                    {{profileData.otherInfo.language.title}}
+                                </div>
+                                <div>
+                                    <b>{{profileData.otherInfo.language.value}}</b>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- Плашка 3 --}}
+                <div class="card p-2 my-4">
+                    <div class="body col-12">
+                        <div class="row">
+                            <div>
+                                {{#each buttons}}
+                                <a class={{#if isPrimary}}"btn btn-primary"{{/if}} {{#if isSecondary}}"btn
+                                    btn-outline-secondary"{{/if}} {{#if isDanger}}"btn btn-outline-danger"{{/if}}
+                                    href="{{link}}">{{text}}</a>
+                                {{/each}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            {{!-- Оримувачі --}}
+            <div class="card p-3">
+                <div class="col-12">
+                    <h4>{{recipients.title}}</h4>
+
+                    <div class="row">
+
+                        <div class="col-4">
+
+                            {{#each recipients.users}}
+                            <div class="card">
+                                <div class="card-body">
+
+                                    <h6 class="card-title">{{name}}</h6>
+                                    <p>{{phone}}</p>
+                                    <button class="btn btn-primary" link={{button.link}}>{{button.text}}</button>
+
+                                </div>
+                            </div>
+                            {{/each}}
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        {{/with}}
+    </div>
+
+
+
+
+
+
+
+
+
+
+</main>
