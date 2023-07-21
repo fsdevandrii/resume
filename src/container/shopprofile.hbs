@@ -110,6 +110,10 @@
         {{/with}}
     </div>
 
+
+
+
+
     {{!--UserInfo Block --}}
     <div>
         {{#with userInfo}}
@@ -255,14 +259,15 @@
 
                         {{#each contacts.contactData}}
                         <div class="col-4">
-
                             <div class="card">
                                 <div class="card-body">
                                     <h6 class="card-title">{{title}}</h6>
                                     <p><b>{{value}}</b></p>
+                                    {{#with button}}
                                     <a class="{{#if isPrimary}}btn btn-primary{{/if}} {{#if isSecondary}}btn
                                         btn-outline-secondary{{/if}}{{#if isDanger}}btn btn-outline-danger{{/if}}"
-                                        href="{{button.link}}">{{button.text}}</a>
+                                        href="{{link}}">{{text}}</a>
+                                    {{/with}}
                                 </div>
                             </div>
                         </div>
@@ -283,11 +288,24 @@
     </div>
 
 
+    <div class="mt-5 mb-1">
+        <hr>
+    </div>
 
 
+    {{!-- Footer block --}}
 
-
-
+    <div class="row">
+        {{#each footer}}
+        <div class="nav col-2">
+            {{#each this}}
+            <div class="nav nav-item">
+                <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+            </div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
 
 
 
