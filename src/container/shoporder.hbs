@@ -20,6 +20,8 @@
 
 
     {{!------------ Лівий блок -------------}}
+
+
     <div class="row">
         <div class="col-8">
             <div class="pt-3 pb-3">
@@ -127,80 +129,77 @@
             </div>
         </div>
 
-    </div>
 
 
-
-    {{!---------------- Правий блок -------------------}}
-    <div class="row">
-
+        {{!---------------- Правий блок -------------------}}
         <div class="col-4">
-
-        </div>
-        {{!-- Блок з кнопками --}}
-
-        <div class="card col-4">
-            <div class="card-body">
-                {{#each action_block}}
-                <div class="pt-1 pb-1">
-                    <button class={{#if isSuccess}}"btn btn-primary"{{/if}}{{#if isDanger}}"btn btn-danger"{{/if}}{{#if
-                        isInfo}}"btn btn-warning"{{/if}}>{{text}}</button>
+            <div>
+                {{!-- Блок з кнопками --}}
+                <div class="card mb-3">
+                    <div class="card-body">
+                        {{#each action_block}}
+                        <div class="pt-1 pb-1">
+                            <button class={{#if isSuccess}}"btn btn-primary"{{/if}}{{#if isDanger}}"btn
+                                btn-danger"{{/if}}{{#if isInfo}}"btn btn-warning"{{/if}}>{{text}}</button>
+                        </div>
+                        {{/each}}
+                    </div>
                 </div>
-                {{/each}}
+
+                {{!--Блок "ВСЬОГО:" --}}
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            {{#with total}}
+                            <div>
+                                <h4>
+                                    {{title}}
+                                </h4>
+                                {{#each item_list}}
+                                <div>
+                                    <div>
+                                        {{name}}: {{price}}
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <hr>
+                                {{#each additional_info}}
+                                <div>
+                                    <div>
+                                        {{text}}: {{value}}
+                                    </div>
+                                </div>
+                                {{/each}}
+                                <hr>
+                                <div>
+                                    {{total_price.text}}: {{total_price.value}}
+                                </div>
+                            </div>
+                            <hr>
+                            {{!-- Дві кнопки "Всього" --}}
+                            <div class="row">
+                                <div class="col-12">
+                                    {{#each button}}
+                                    <button class={{#if isPrimary}}"btn btn-primary my-3"{{/if}} {{#if isOutline}}"btn
+                                        btn-outline-primary"{{/if}}>{{text}}</button>
+                                    {{/each}}
+                                </div>
+                            </div>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        {{!--Блок "ВСЬОГО:" --}}
-        <div class="row">
-            <div class="card col-4">
-                <div class="card-body">
-                    {{#with total}}
-                    <div>
-                        <h4>
-                            {{title}}
-                        </h4>
-                        {{#each item_list}}
-                        <div>
-                            <div>
-                                {{name}}: {{price}}
-                            </div>
-                        </div>
-                        {{/each}}
-                        <hr>
-                        {{#each additional_info}}
-                        <div>
-                            <div>
-                                {{text}}: {{value}}
-                            </div>
-                        </div>
-                        {{/each}}
-                        <hr>
-                        <div>
-                            {{total_price.text}}: {{total_price.value}}
-                        </div>
-                    </div>
-
-                    <hr>
-
-                    {{!-- Дві кнопки "Всього" --}}
-                    <div class="row">
-                        <div class="col-12">
-                            {{#each button}}
-                            <button class={{#if isPrimary}}"btn btn-primary my-3"{{/if}} {{#if isOutline}}"btn
-                                btn-outline-primary"{{/if}}>{{text}}</button>
-                            {{/each}}
-                        </div>
-                    </div>
 
 
-                    {{/with}}
-
-
-                </div>
-
-            </div>
-        </div>
     </div>
+
+
+
+
+
 
     {{!-- Блок Delivery--}}
     <div class="my-5">
