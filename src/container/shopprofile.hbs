@@ -92,7 +92,7 @@
 
                     <div class="col-4">
                         {{#each images}}
-                        <img class="card-img-top" src={{this}} alt="picture">
+                        <img class="card-img-top" style="width: 30%; height: auto;" src={{this}} alt="picture">
                         {{/each}}
                     </div>
 
@@ -198,19 +198,22 @@
                 <div class="card p-2 my-4">
                     <div class="body col-12">
                         <div class="row">
-                            <div>
-                                {{#each buttons}}
-                                <a class={{#if isPrimary}}"btn btn-primary"{{/if}} {{#if isSecondary}}"btn
-                                    btn-outline-secondary"{{/if}} {{#if isDanger}}"btn btn-outline-danger"{{/if}}
+
+                            {{#each buttons}}
+                            <div class="col-4">
+                                <a class={{#if isPrimary}}"btn btn-primary" {{/if}} {{#if isSecondary}} "btn
+                                    btn-outline-secondary" {{/if}} {{#if isDanger}} "btn btn-outline-danger" {{/if}}
                                     href="{{link}}">{{text}}</a>
-                                {{/each}}
                             </div>
+                            {{/each}}
+
                         </div>
 
                     </div>
                 </div>
 
             </div>
+
             {{!-- Оримувачі --}}
             <div class="card p-3">
                 <div class="col-12">
@@ -218,21 +221,54 @@
 
                     <div class="row">
 
+
+                        {{#each recipients.users}}
                         <div class="col-4">
 
-                            {{#each recipients.users}}
                             <div class="card">
                                 <div class="card-body">
 
-                                    <h6 class="card-title">{{name}}</h6>
+                                    <h6 class="card-title"><b>{{name}}</b></h6>
                                     <p>{{phone}}</p>
                                     <button class="btn btn-primary" link={{button.link}}>{{button.text}}</button>
 
                                 </div>
                             </div>
-                            {{/each}}
 
                         </div>
+
+                        {{/each}}
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            {{!-- Контакти --}}
+            <div class="card my-3 p-3">
+                <div class="col-12">
+                    <h4>{{contacts.title}}</h4>
+
+                    <div class="row">
+
+                        {{#each contacts.contactData}}
+                        <div class="col-4">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title">{{title}}</h6>
+                                    <p><b>{{value}}</b></p>
+                                    <a class="{{#if isPrimary}}btn btn-primary{{/if}} {{#if isSecondary}}btn
+                                        btn-outline-secondary{{/if}}{{#if isDanger}}btn btn-outline-danger{{/if}}"
+                                        href="{{button.link}}">{{button.text}}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{/each}}
+
 
                     </div>
 
@@ -241,6 +277,9 @@
 
         </div>
         {{/with}}
+
+
+
     </div>
 
 
