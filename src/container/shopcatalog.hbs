@@ -39,7 +39,7 @@
     {{!-- Блок сортування --}}
     <div class="row">
         {{#each sortBlock}}
-        <div class="col-3">
+        <div class="col-3 my-4">
             <select class="form-select">
                 <option selected>{{placeholder}}</option>
                 {{#each options}}
@@ -54,173 +54,166 @@
 
 
     <div class="row">
-        <div>
 
+        {{!-- Блок фильтрів --}}
+        <div class="col-4 my-4">
+            {{#with filterBlock}}
+
+            {{!-- Блок продавців --}}
             <div>
-                {{!-- Блок фильтрів --}}
-                <div class="col-4 my-4">
-                    {{#with filterBlock}}
+                <label class="form-label py-2">{{sellers.title}}</label>
 
-                    {{!-- Блок продавців --}}
-                    <div>
-                        <label class="form-label py-2">{{sellers.title}}</label>
-
-                        {{#each sellers.list}}
-                        <div class="form-check">
-                            <label class="form-check-label">{{value}}</label>
-                            <input name="food" type="checkbox" class="form-check-input">
-                        </div>
-                        {{/each}}
-                    </div>
-
-                    <div class="pt-2">
-                        <hr>
-                    </div>
-
-                    {{!-- Блок Брендів --}}
-                    <div>
-
-                        <div>
-                            <label class="form-label py-2">{{brands.title}}</label>
-
-                            <input class="form-control" type="text" placeholder={{brands.input.placeholder}}>
-                        </div>
-
-                        <div class="pt-3">
-                            {{#each brands.options}}
-                            <div class="form-check">
-                                <label class="form-check-label">{{value}}</label>
-                                <input name="food" type="checkbox" class="form-check-input">
-                            </div>
-                            {{/each}}
-                        </div>
-
-                    </div>
-
-                    <div class="pt-2">
-                        <hr>
-                    </div>
-
-                    {{!-- Блок Ціни --}}
-                    <div>
-
-                        <div>
-                            <label class="form-label py-2">{{price.title}}</label>
-                            <input class="form-control" type="text" placeholder={{price.range.from}}>
-                        </div>
-
-                        <div>
-                            <label class="form-label py-2">{{price.title}}</label>
-                            <input class="form-control" type="text" placeholder={{price.range.to}}>
-                        </div>
-
-                        <div class="pt-4">
-                            <a class="btn btn-outline-secondary" href="{{price.button.link}}">{{price.button.text}}</a>
-                        </div>
-
-                    </div>
-
-                    <div class="pt-2">
-                        <hr>
-                    </div>
-
-                    {{!-- Блок Відправки --}}
-                    <div>
-                        {{#each filterList}}
-                        <div class="py-1">
-
-                            <div class="form-label">{{title}}</div>
-                            {{#each options}}
-                            <div class="form-check">
-                                <label class="form-check-label">{{value}}</label>
-                                <input name="food" type="checkbox" class="form-check-input">
-                            </div>
-                            {{/each}}
-                            <hr>
-                        </div>
-                        {{/each}}
-                    </div>
-                    {{/with}}
+                {{#each sellers.list}}
+                <div class="form-check">
+                    <label class="form-check-label">{{value}}</label>
+                    <input name="food" type="checkbox" class="form-check-input">
                 </div>
-
+                {{/each}}
             </div>
 
+            <div class="pt-2">
+                <hr>
+            </div>
 
-            {{!-- Карточка товару --}}
+            {{!-- Блок Брендів --}}
             <div>
-                <div class="row">
-                    {{#each goodsList}}
-                    <div class="col-4">
-                        <div class="card">
-                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product hoto">
-                            <div class="card-body">
 
-                                <div>
-                                    {{#if isHot}}
-                                    <span class="badge text-bg-warning rounded-pill text-uppercase">hot</span>
-                                    {{/if}}
+                <div>
+                    <label class="form-label py-2">{{brands.title}}</label>
 
-                                    {{#if isNew}}
-                                    <span class="badge text-bg-primary rounded-pill">Нове</span>
-                                    {{/if}}
-                                    <div class="pt-2">
-                                        {{#if isFast}}
-                                        <span class="badge text-bg-success">Швидка доставка</span>
-                                        {{/if}}
-                                    </div>
+                    <input class="form-control" type="text" placeholder={{brands.input.placeholder}}>
+                </div>
 
-                                    <div class="py-2">
-                                        {{#if isFree}}
-                                        <span class="badge text-bg-secondary">Безкоштовна доставка</span>
-                                        {{/if}}
-                                    </div>
-
-
-                                    <div class="py-2">
-                                        <h5 class="card-title">{{name}}
-                                        </h5>
-                                    </div>
-
-                                    <div class="py-1">
-                                        {{review.amount}} {{review.text}}
-                                    </div>
-
-                                    <div>
-                                        <h4>
-                                            {{price}}
-                                        </h4>
-                                    </div>
-
-                                    <div>
-                                        {{delivery}}
-                                    </div>
-
-
-                                    <div class="mt-2">
-                                        {{#each buttons}}
-                                        <a class={{#if isPrimary}}"btn btn-primary my-2"{{/if}} {{#if isSecondary}}"btn
-                                            btn-secondary"{{/if}} href="{{link}}">{{text}}</a>
-                                        {{/each}}
-                                    </div>
-
-                                    <div class="py-2">
-                                        {{#each characteristics}}
-
-                                        <div>{{title}}: {{value}}</div>
-                                        {{/each}}
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                <div class="pt-3">
+                    {{#each brands.options}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="food" type="checkbox" class="form-check-input">
                     </div>
                     {{/each}}
                 </div>
+
             </div>
 
+            <div class="pt-2">
+                <hr>
+            </div>
 
+            {{!-- Блок Ціни --}}
+            <div>
 
+                <div>
+                    <label class="form-label py-2">{{price.title}}</label>
+                    <input class="form-control" type="text" placeholder={{price.range.from}}>
+                </div>
+
+                <div>
+                    <label class="form-label py-2">{{price.title}}</label>
+                    <input class="form-control" type="text" placeholder={{price.range.to}}>
+                </div>
+
+                <div class="pt-4">
+                    <a class="btn btn-outline-secondary" href="{{price.button.link}}">{{price.button.text}}</a>
+                </div>
+
+            </div>
+
+            <div class="pt-2">
+                <hr>
+            </div>
+
+            {{!-- Блок Відправки --}}
+            <div>
+                {{#each filterList}}
+                <div class="py-1">
+
+                    <div class="form-label">{{title}}</div>
+                    {{#each options}}
+                    <div class="form-check">
+                        <label class="form-check-label">{{value}}</label>
+                        <input name="food" type="checkbox" class="form-check-input">
+                    </div>
+                    {{/each}}
+                    <hr>
+                </div>
+                {{/each}}
+            </div>
+            {{/with}}
         </div>
+
+
+        <div class="col-8">
+            <div class="row">
+                {{!-- Карточка товару --}}
+                {{#each goodsList}}
+                <div class="col-4 mb-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product hoto">
+                        <div class="card-body">
+
+                            <div>
+                                {{#if isHot}}
+                                <span class="badge text-bg-warning rounded-pill text-uppercase">hot</span>
+                                {{/if}}
+
+                                {{#if isNew}}
+                                <span class="badge text-bg-primary rounded-pill">Нове</span>
+                                {{/if}}
+                                <div class="pt-2">
+                                    {{#if isFast}}
+                                    <span class="badge text-bg-success">Швидка доставка</span>
+                                    {{/if}}
+                                </div>
+
+                                <div class="py-2">
+                                    {{#if isFree}}
+                                    <span class="badge text-bg-secondary">Безкоштовна доставка</span>
+                                    {{/if}}
+                                </div>
+
+
+                                <div class="py-2">
+                                    <h5 class="card-title">{{name}}
+                                    </h5>
+                                </div>
+
+                                <div class="py-1">
+                                    {{review.amount}} {{review.text}}
+                                </div>
+
+                                <div>
+                                    <h4>
+                                        {{price}}
+                                    </h4>
+                                </div>
+
+                                <div>
+                                    {{delivery}}
+                                </div>
+
+
+                                <div class="mt-2">
+                                    {{#each buttons}}
+                                    <a class={{#if isPrimary}}"btn btn-primary my-2"{{/if}} {{#if isSecondary}}"btn
+                                        btn-secondary"{{/if}} href="{{link}}">{{text}}</a>
+                                    {{/each}}
+                                </div>
+
+                                <div class="py-2">
+                                    {{#each characteristics}}
+
+                                    <div>{{title}}: {{value}}</div>
+                                    {{/each}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+
 
     </div>
 
