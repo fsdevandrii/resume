@@ -216,7 +216,7 @@ router.get('/work', function (req, res) {
   res.render('work', {
     // ↙ сюди вводимо JSON дані
 
-    layout: 'big',
+    // layout: 'big',
 
     page: {
       title: 'Resume | Work',
