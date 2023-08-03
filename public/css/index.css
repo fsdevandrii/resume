@@ -1,3 +1,11 @@
 html {
   max-width: 1100px;
 }
+
+.part {
+  width: 30%;
+}
+
+.car {
+  display: block;
+}
